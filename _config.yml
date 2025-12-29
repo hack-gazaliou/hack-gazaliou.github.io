@@ -10,8 +10,21 @@ defaults:
       type: "posts"
     values:
       layout: single
-      author_profile: true # Affiche ta photo et bio à gauche
+      author_profile: true 
       read_time: true
       comments: false
       share: true
       related: true
+
+author:
+  name: "Hack "
+  avatar: "/assets/images/profile.jpg" # Il faudra uploader une photo ici
+  bio: "Mechatronics engineering student, particularly interested in control systems and machine learning."
+  location: "Paris/Strasbourg, France"
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/hack-gazaliou"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/hack-gazaliou"
