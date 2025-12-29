@@ -17,10 +17,10 @@ defaults:
       related: true
 
 author:
-  name: "Hack "
-  avatar: "/assets/images/profile.jpg" # Il faudra uploader une photo ici
+  name: "Hack"
+  avatar: "/assets/images/profile.jpg" 
   bio: "Mechatronics engineering student, particularly interested in control systems and machine learning."
-  location: "Paris/Strasbourg, France"
+  location: "IDF/Strasbourg, France"
   links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
