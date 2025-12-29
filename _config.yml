@@ -1,0 +1,17 @@
+remote_theme: mmistakes/minimal-mistakes
+title: Hack GAZALIOU
+tagline: French mechatronics engineering student.
+description: "Mechatronics & Machine Learning Projects Portfolio."
+url: "https://hack-gazaliou.github.io" 
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: single
+      author_profile: true # Affiche ta photo et bio à gauche
+      read_time: true
+      comments: false
+      share: true
+      related: true
