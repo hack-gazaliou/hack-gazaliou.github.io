@@ -1,26 +1,37 @@
+# --- CONFIGURATION DU THÈME ---
 remote_theme: mmistakes/minimal-mistakes
-title: Hack GAZALIOU
-tagline: French mechatronics engineering student.
-description: "Mechatronics & Machine Learning Projects Portfolio."
-url: "https://hack-gazaliou.github.io" 
+minimal_mistakes_skin: 
+locale: "en-US" 
 
+# --- INFOS DU SITE ---
+title: Hack GAZALIOU
+tagline: Mechatronics Engineering Student
+description: "Portfolio focused on Robotics, Control Systems, and Machine Learning."
+url: "https://hack-gazaliou.github.io"
+
+# --- PARAMÈTRES D'AFFICHAGE ---
+paginate: 5
+search: true 
+
+# --- VALEURS PAR DÉFAUT ---
 defaults:
   - scope:
       path: ""
       type: "posts"
     values:
       layout: single
-      author_profile: true 
+      author_profile: true
       read_time: true
       comments: false
       share: true
       related: true
 
+# --- PROFIL (BARRE LATÉRALE) ---
 author:
-  name: "Hack"
-  avatar: "/assets/images/profile.jpg" 
-  bio: "Mechatronics engineering student, particularly interested in control systems and machine learning."
-  location: "IDF/Strasbourg, France"
+  name: "Hack GAZALIOU" 
+  avatar: "/assets/images/profile.jpg"
+  bio: "Mechatronics engineering student. Bridging the gap between **Control Theory** and **ML**."
+  location: "Ile de France/Strasbourg, France"
   links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
@@ -28,5 +39,7 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/hack-gazaliou"
+
+# --- PLUGINS NÉCESSAIRES ---
 plugins:
   - jekyll-include-cache
