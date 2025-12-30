@@ -1,2 +1,2 @@
 # hack-gazaliou.github.io
-Personal blog.
+Personal blog for mechatronics/ML projects and possibly other things.
