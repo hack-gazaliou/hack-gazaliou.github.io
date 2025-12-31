@@ -127,3 +127,33 @@ h1, h2, h3, h4, h5, h6, .site-title, .archive__item-title {
   margin-left: auto;
   margin-right: auto;
 }
+/* --- FIX ICÔNES BARRE LATÉRALE --- */
+.sidebar .fas, .sidebar .fab, .sidebar .far, .sidebar i {
+    color: $muted-text-color !important; /* Gris bleuté lisible */
+}
+
+/* Au survol, on les met en jaune électrique */
+.sidebar a:hover .fas, 
+.sidebar a:hover .fab, 
+.sidebar a:hover i {
+    color: $primary-color !important;
+}
+/* --- STYLE DES TAGS (BADGES JAUNES) --- */
+.page__taxonomy-item {
+    background-color: transparent;
+    border: 1px solid $primary-color;
+    color: $primary-color !important;
+    font-family: $header-font-family;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.page__taxonomy-item:hover {
+    background-color: $primary-color;
+    color: $background-color !important; /* Texte devient noir sur fond jaune */
+    text-decoration: none;
+}
