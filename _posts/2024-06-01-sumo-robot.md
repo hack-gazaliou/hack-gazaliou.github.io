@@ -15,6 +15,21 @@ header:
   overlay_filter: 0.5
 ---
 
+<style>
+  /* L'état initial : invisible et un peu plus bas */
+  .reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+  }
+
+  /* L'état final : visible et à sa place */
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
 <div class="reveal" markdown="1">
 Back in the second semester of my first year in Mechatronics, we were thrown into the deep end with a classic challenge: **The Sumo Robot Competition**.
 
@@ -102,8 +117,19 @@ This project was my first real taste of the "Mechatronic Trinity": mechanical co
 </div>
 
 <script>
-  // Si tu utilises ScrollReveal.js
-  if (typeof ScrollReveal !== 'undefined') {
-    ScrollReveal().reveal('.reveal', { delay: 200, distance: '50px', origin: 'bottom' });
-  }
+  document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target); 
+        }
+      });
+    }, {
+      threshold: 0.15 
+    });
+
+    const hiddenElements = document.querySelectorAll('.reveal');
+    hiddenElements.forEach((el) => observer.observe(el));
+  });
 </script>
