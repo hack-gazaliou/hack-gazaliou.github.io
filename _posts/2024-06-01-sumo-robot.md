@@ -1,6 +1,6 @@
 ---
-title: "The All-Seeing Sumo: Winning with Sensor Fusion"
-excerpt: "How we built a track-driven sumo robot that outsmarted opponents using Time-of-Flight technology."
+title: "First Steps in Sensor Fusion: Giving Sight to a Sumo Robot"
+excerpt: "A retrospective on my first mechatronics project: using Time-of-Flight sensors to prioritize situational awareness over brute force."
 categories:
   - academic
   - robotics
