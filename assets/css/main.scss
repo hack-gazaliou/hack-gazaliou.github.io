@@ -1,0 +1,63 @@
+---
+---
+
+@import "minimal-mistakes";
+
+/* --- TON DESIGN PERSO --- */
+
+/* 1. La Carte (Le conteneur) */
+.archive__item {
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 12px; /* Arrondir les angles de la carte */
+  overflow: hidden;    /* Empêche l'image de dépasser quand elle zoome */
+  padding-bottom: 10px;
+}
+
+/* Effet au survol de la carte globale */
+.archive__item:hover {
+  transform: translateY(-8px); /* La carte monte de 8px */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Ombre portée douce */
+  background-color: rgba(255, 255, 255, 0.05); /* Légère surbrillance */
+  z-index: 10;
+}
+
+/* 2. L'Image (Teaser) */
+.archive__item-teaser {
+  overflow: hidden;
+  border-radius: 12px 12px 0 0; /* Arrondi seulement en haut */
+  margin-bottom: 0.5em;
+  max-height: 200px; /* Force une hauteur uniforme si tes images varient */
+}
+
+.archive__item-teaser img {
+  transition: transform 0.6s ease; /* Zoom lent et fluide */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Remplit bien la case sans déformer */
+}
+
+/* Quand on survole la CARTE, l'IMAGE zoome */
+.archive__item:hover .archive__item-teaser img {
+  transform: scale(1.08); /* Zoom à 108% */
+}
+
+/* 3. Le Titre */
+.archive__item-title {
+  transition: color 0.3s ease;
+  padding: 0 10px; /* Un peu d'air sur les côtés */
+}
+
+.archive__item-title a {
+  text-decoration: none; /* Enlève le soulignement moche par défaut */
+}
+
+.archive__item:hover .archive__item-title a {
+  color: #2980b9; /* Change la couleur du titre au survol (Bleu pro) */
+  text-decoration: none;
+}
+
+/* 4. Le petit texte (Excerpt) */
+.archive__item-excerpt {
+  padding: 0 10px;
+  transition: opacity 0.3s;
+}
