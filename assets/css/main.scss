@@ -1,86 +1,142 @@
 ---
 ---
 
+/* ==========================================
+   1. DÉFINITION DE TA CHARTE GRAPHIQUE
+   (Doit être avant l'import du thème)
+============================================= */
+
+// --- COULEURS CYBER/TECH ---
+$background-color: #0a192f;        // Bleu nuit profond (Fond principal)
+$text-color: #e6f1ff;              // Blanc cassé (Texte courant)
+$muted-text-color: #8892b0;        // Gris bleuté (Texte secondaire/dates)
+$primary-color: #FFC107;           // JAUNE ÉLECTRIQUE (Liens, boutons, accents)
+$headings-color: #FFC107;          // Jaune pour les titres
+$link-color: #FFC107;              // Jaune pour les liens
+$link-color-hover: #ffe066;        // Jaune plus clair au survol
+$border-color: #233554;            // Couleur des bordures subtiles
+$code-background-color: #112240;   // Fond des blocs de code
+
+// --- TYPOGRAPHIE ---
+$global-font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", Helvetica, Arial, sans-serif;
+$header-font-family: "Fira Code", monospace; // Police "Hacker" pour les titres
+$caption-font-family: "Fira Code", monospace;
+
+// --- IMPORT DU THÈME OFFICIEL ---
 @import "minimal-mistakes";
 
-/* --- TON DESIGN PERSO --- */
 
-/* 1. La Carte (Le conteneur) */
+/* ==========================================
+   2. TES CUSTOMISATIONS AVANCÉES
+   (S'applique par dessus le thème)
+============================================= */
+
+/* --- GLOBAL & STRUCTURE --- */
+body {
+  background-color: $background-color;
+  color: $text-color;
+}
+
+/* La barre latérale (Ton profil) */
+.sidebar {
+  background-color: lighten($background-color, 5%) !important; // Un peu plus clair que le fond
+  border-right: 1px solid $border-color;
+}
+
+.sidebar__container {
+   background-color: transparent !important;
+}
+
+
+/* --- TYPOGRAPHIE CYBER --- */
+// Appliquer la police "Fira Code" aux titres h1 -> h6
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font-family;
+  text-transform: uppercase; // Optionnel : met les titres en majuscules pour plus d'impact
+  letter-spacing: 0.05em;
+}
+
+// Le titre du site dans la barre latérale
+.site-title {
+    font-family: $header-font-family;
+    color: $primary-color !important;
+}
+
+
+/* --- LES CARTES PROJETS (Style inspiré de ton image) --- */
 .archive__item {
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  border-radius: 12px; /* Arrondir les angles de la carte */
-  overflow: hidden;    /* Empêche l'image de dépasser quand elle zoome */
-  padding-bottom: 10px;
+  background-color: #112240; // Bleu plus clair pour faire ressortir la carte
+  border: 2px solid $border-color;
+  border-radius: 8px;
+  padding: 15px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+  // Intégration de ton animation de scroll (si tu utilises le JS)
+  &.reveal-element {
+    opacity: 0;
+    transform: translateY(50px) scale(0.98);
+  }
+  &.reveal-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
-/* Effet au survol de la carte globale */
+/* Effet au survol de la carte */
 .archive__item:hover {
-  transform: translateY(-8px); /* La carte monte de 8px */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Ombre portée douce */
-  background-color: rgba(255, 255, 255, 0.05); /* Légère surbrillance */
-  z-index: 10;
+  transform: translateY(-5px) !important;
+  border-color: $primary-color; // Bordure jaune au survol
+  box-shadow: 0 10px 20px rgba(255, 193, 7, 0.15); // Légère lueur jaune
 }
 
-/* 2. L'Image (Teaser) */
-.archive__item-teaser {
-  overflow: hidden;
-  border-radius: 12px 12px 0 0; /* Arrondi seulement en haut */
-  margin-bottom: 0.5em;
-  max-height: 200px; /* Force une hauteur uniforme si tes images varient */
-}
-
-.archive__item-teaser img {
-  transition: transform 0.6s ease; /* Zoom lent et fluide */
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Remplit bien la case sans déformer */
-}
-
-/* Quand on survole la CARTE, l'IMAGE zoome */
-.archive__item:hover .archive__item-teaser img {
-  transform: scale(1.08); /* Zoom à 108% */
-}
-
-/* 3. Le Titre */
-.archive__item-title {
-  transition: color 0.3s ease;
-  padding: 0 10px; /* Un peu d'air sur les côtés */
-}
-
+// Le titre dans la carte
 .archive__item-title a {
-  text-decoration: none; /* Enlève le soulignement moche par défaut */
+    font-family: $header-font-family;
+    color: $text-color !important; // Titre blanc par défaut
+    text-decoration: none;
 }
 
 .archive__item:hover .archive__item-title a {
-  color: #2980b9; /* Change la couleur du titre au survol (Bleu pro) */
-  text-decoration: none;
+    color: $primary-color !important; // Titre devient jaune au survol
 }
 
-/* 4. Le petit texte (Excerpt) */
+// Le petit texte sous le titre
 .archive__item-excerpt {
-  padding: 0 10px;
-  transition: opacity 0.3s;
-}
-/* --- ANIMATION SCROLL REVEAL (AUTO) --- */
-
-/* État initial (Invisible) */
-.reveal-element {
-  opacity: 0;
-  transform: translateY(80px) scale(0.95); /* On descend de 80px et on réduit un peu la taille */
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Courbe de vitesse fluide */
-  will-change: transform, opacity; /* Optimisation pour la fluidité (60 FPS) */
+    color: $muted-text-color;
+    font-size: 0.9em;
 }
 
-/* État final (Visible) */
-.reveal-active {
-  opacity: 1;
-  transform: translateY(0) scale(1); /* Revient à sa place et taille normale */
+/* Image dans la carte */
+.archive__item-teaser {
+    border-radius: 6px;
+    overflow: hidden;
+    border-bottom: 2px solid $border-color;
 }
 
-/* Optionnel : Désactiver sur mobile si ça lag (souvent mieux) */
-@media (max-width: 768px) {
-  .reveal-element {
-    opacity: 1 !important;
-    transform: none !important;
-  }
+
+/* --- BOUTONS & NAVIGATION --- */
+// Les boutons (ex: pagination)
+.btn--primary {
+    background-color: transparent;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+    font-family: $header-font-family;
+
+    &:hover {
+        background-color: $primary-color;
+        color: $background-color; // Texte devient foncé sur fond jaune
+    }
+}
+
+// Menu du haut
+.greedy-nav {
+    background-color: $background-color;
+    border-bottom: 1px solid $border-color;
+}
+.greedy-nav a {
+    color: $text-color !important;
+    &:hover {
+        color: $primary-color !important;
+    }
 }
