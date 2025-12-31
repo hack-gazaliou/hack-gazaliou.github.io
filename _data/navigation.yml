@@ -1,5 +1,9 @@
 main:
-  - title: "Accueil"
+  - title: "Home"
     url: /
-  - title: "Projets"
-    url: /projects/
+  - title: "Projects"
+    children:
+      - title: "Academic Projects"
+        url: /academic/
+      - title: "Personal Projects"
+        url: /personal/
