@@ -17,7 +17,7 @@ $code-background-color: #112240;
 
 // --- TYPOGRAPHIE ---
 $global-font-family: "Inter", -apple-system, sans-serif; // Police "Dense" pour le corps (Requirement 2)
-$header-font-family: "Inter", monospace;
+$header-font-family: "Inter", -apple-system, sans-serif;
 
 @import "minimal-mistakes";
 
