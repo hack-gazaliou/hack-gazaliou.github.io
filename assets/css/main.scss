@@ -157,3 +157,7 @@ h1, h2, h3, h4, h5, h6, .site-title, .archive__item-title {
     color: $background-color !important; /* Texte devient noir sur fond jaune */
     text-decoration: none;
 }
+/* --- CENTRAGE DU NOM ET DE LA BIO --- */
+.sidebar .author__content {
+  text-align: center;
+}
