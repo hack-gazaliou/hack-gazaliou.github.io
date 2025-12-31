@@ -2,6 +2,7 @@ main:
   - title: "Home"
     url: /
   - title: "Projects"
+    url: /projects/      
     children:
       - title: "Academic Projects"
         url: /academic/
