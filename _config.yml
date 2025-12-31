@@ -1,6 +1,6 @@
 # --- CONFIGURATION DU THÈME ---
 remote_theme: mmistakes/minimal-mistakes
-minimal_mistakes_skin: dark
+minimal_mistakes_skin: default
 locale: "en-US" 
 
 # --- INFOS DU SITE ---
