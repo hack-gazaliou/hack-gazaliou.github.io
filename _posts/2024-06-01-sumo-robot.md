@@ -33,7 +33,6 @@ Instead of using standard ultrasonic sensors (which suffer from interference whe
 </figure>
 
 We used four of these sensors combined with an **I2C Multiplexer**. Why a multiplexer? Because these sensors all have the same fixed I2C address, so we needed a way to talk to them individually. This setup gave us four distinct “cones of vision,” allowing us to track the opponent far more precisely than most other teams.
-
 ## Mechanical Design: Torque & Traction
 
 For the chassis, we ignored wheels and went straight for **tracks (Pololu 22T)**.
