@@ -69,10 +69,12 @@ In the final tournament, out of 6 teams, we secured **2nd place**.
 
 At the time, we considered the final won, but a brief arbitration call about the ring border came up. That’s racing (or sumo-ing).
 
-<figure class="half align-center" style="text-align: center;">
-    <a href="/assets/images/quart.jpg"><img src="/assets/images/quart.jpg" alt="Robot Front View"></a>
-    <a href="/assets/images/huitieme.jpg"><img src="/assets/images/huitieme.jpg" alt="Robot Side View"></a>
-    <figcaption style="text-align: center;">From concept sketch to reality.</figcaption>
+<figure class="align-center">
+    <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+        <a href="/assets/images/quart.jpg" style="width: 45%;"><img src="/assets/images/quart.jpg" alt="Robot Front View" style="width: 100%;"></a>
+        <a href="/assets/images/huitieme.jpg" style="width: 45%;"><img src="/assets/images/huitieme.jpg" alt="Robot Side View" style="width: 100%;"></a>
+    </div>
+    <figcaption style="text-align: center; margin-top: 10px;">From concept sketch to reality.</figcaption>
 </figure>
 
 Looking back, the wiring is definitely chaotic—a classic 'student project' mess—but considering it was our first integration, I’m willing to forgive our past selves.
