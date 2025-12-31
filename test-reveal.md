@@ -1,121 +1,109 @@
 ---
-title: "Test Effet Scroll Reveal"
-layout: single
-permalink: /test-reveal/
-author_profile: true
+title: "First Steps in Sensor Fusion: Giving Sight to a Sumo Robot"
+excerpt: "A retrospective on my first mechatronics project: using Time-of-Flight sensors to prioritize situational awareness over brute force."
+categories:
+  - academic
+  - robotics
+tags:
+  - Arduino
+  - C++
+  - PCB Design
+  - CAD
+header:
+  teaser: /assets/images/quart.jpg
+  overlay_image: /assets/images/quart.jpg
+  overlay_filter: 0.5
 ---
 
-<style>
-  /* L'état initial : invisible et un peu plus bas */
-  .reveal {
-    opacity: 0;
-    transform: translateY(50px); /* Décalage vers le bas */
-    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); /* Transition fluide */
+<div class="reveal" markdown="1">
+Back in the second semester of my first year in Mechatronics, we were thrown into the deep end with a classic challenge: **The Sumo Robot Competition**.
+
+The rules were standard: a 500g weight limit, strictly defined dimensions (110x110mm), and a circular arena (Dohyo). The goal? Push the other robot out.
+
+While most teams focused on raw speed or heavy armor, we decided to bet on something else: **Situational Awareness.**
+</div>
+
+## The Strategy: "Vision" Over Brute Force
+
+<div class="reveal" markdown="1">
+We realized early on that most beginner robots are "blind"—they spin randomly until they hit something. We wanted our robot to *hunt*.
+
+Instead of using standard ultrasonic sensors (which suffer from interference when multiple robots are pinging at the same frequency), we integrated **Time-of-Flight (ToF) Laser Distance Sensors (VL53L0X)**.
+</div>
+
+<figure class="align-center reveal">
+  <img src="/assets/images/cad-render1.jpg" alt="CAD assembly" style="display: block; margin-left: auto; margin-right: auto; width: 80%;">
+  <figcaption style="text-align: center;">The final assembly.</figcaption>
+</figure>
+
+<div class="reveal" markdown="1">
+We used four of these sensors combined with an **I2C Multiplexer**. Why a multiplexer? Because these sensors all have the same fixed I2C address, so we needed a way to talk to them individually. This setup gave us four distinct “cones of vision,” allowing us to track the opponent far more precisely than most other teams.
+</div>
+
+## Mechanical Design: Torque & Traction
+
+<div class="reveal" markdown="1">
+For the chassis, we ignored wheels and went straight for **tracks (Pololu 22T)**.
+
+In Sumo, traction is everything. If you lose grip, you lose the pushing match. We designed the robot to be low to the ground (lower center of gravity = harder to flip) and prioritized torque over linear speed.
+</div>
+
+<figure class="align-center reveal">
+  <img src="/assets/images/rampe1.jpg" alt="Raised ramps view" style="display: block; margin-left: auto; margin-right: auto; width: 80%;">
+  <figcaption style="text-align: center;">View with the ramps raised. Note the sensors placed to maximize field of view.</figcaption>
+</figure>
+
+<div class="reveal" markdown="1">
+We also implemented a **bidirectional attack strategy**. Turning 180° takes precious time. To counter this, we designed the robot with ramps on *both* the front and back. No matter where the enemy appeared, we were ready to push.
+</div>
+
+## The Intelligence (Code & Logic)
+
+<div class="reveal" markdown="1">
+The brain of the operation was an **Arduino Nano**. The logic loop was simple but aggressive:
+
+1.  **Scan:** Cycle through the 4 ToF sensors via the Multiplexer.
+2.  **Hunt:** If an enemy is detected, turn immediately toward the sensor with the strongest signal.
+3.  **Kill Switch:** We placed microswitches behind the ramps. The moment physical contact is made, the PID logic is bypassed, and the motors go to **100% PWM forward (or backward)** to shove the opponent out.
+4.  **Survival:** Four **CNY70 IR sensors** point at the floor. If they see a white line (the arena edge), the robot performs an emergency "Reflex Reverse" maneuver.
+</div>
+
+<figure class="align-center reveal">
+  <img src="/assets/images/schema.png" alt="Electronic schematics" style="display: block; margin-left: auto; margin-right: auto; width: 90%;">
+  <figcaption style="text-align: center;">System architecture: Arduino Nano supervising power, vision, and locomotion.</figcaption>
+</figure>
+
+## The Result
+
+<div class="reveal" markdown="1">
+The integration was a massive learning curve—managing power budgets (calculating regulator heat dissipation for the servos), debouncing mechanical switches, and handling I2C communication errors.
+
+In the final tournament, out of 6 teams, we secured **2nd place**.
+
+At the time, we considered the final won, but a brief arbitration call about the ring border came up. That’s racing (or sumo-ing).
+</div>
+
+<figure class="align-center reveal">
+    <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+        <a href="/assets/images/quart.jpg" style="width: 45%; height: 300px; display: block; overflow: hidden;">
+            <img src="/assets/images/quart.jpg" alt="Robot Front View" style="width: 100%; height: 100%; object-fit: cover;">
+        </a>
+        <a href="/assets/images/huitieme.jpg" style="width: 45%; height: 300px; display: block; overflow: hidden;">
+            <img src="/assets/images/huitieme.jpg" alt="Robot Side View" style="width: 100%; height: 100%; object-fit: cover;">
+        </a>
+    </div>
+    <figcaption style="text-align: center; margin-top: 10px;">From concept sketch to reality.</figcaption>
+</figure>
+
+<div class="reveal" markdown="1">
+Looking back, the wiring is definitely chaotic—a classic 'student project' mess—but considering it was our first integration, I’m willing to forgive our past selves.
+
+This project was my first real taste of the "Mechatronic Trinity": mechanical constraints forcing electronic choices, which in turn dictate the software logic. Despite its simplicity, this robot taught me just how crucial sensor reliability is.
+</div>
+
+<script>
+  // Si tu utilises ScrollReveal.js
+  if (typeof ScrollReveal !== 'undefined') {
+    ScrollReveal().reveal('.reveal', { delay: 200, distance: '50px', origin: 'bottom' });
   }
-
-  /* L'état final : visible et à sa place */
-  .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Style des fausses images (Boites grises) */
-  .placeholder-box {
-    width: 100%;
-    height: 300px;
-    background-color: #f0f0f0;
-    border: 2px dashed #ccc;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #888;
-    font-family: monospace;
-    font-size: 1.2rem;
-    margin: 2rem 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  }
-
-  /* Pour aérer la page et forcer le scroll */
-  .spacer {
-    height: 50px;
-  }
-</style>
-
-<div class="reveal">
-  <h2>Introduction du Projet</h2>
-  <p>Commence à scroller doucement vers le bas. Les éléments devraient apparaître progressivement en remontant.</p>
-</div>
-
-<div class="spacer"></div>
-
-<div class="reveal">
-  <div class="placeholder-box">
-    [ IMAGE : SCHÉMA DU ROBOT ]
-  </div>
-  <p><em>Fig 1. Vue d'ensemble de l'architecture du système.</em></p>
-</div>
-
-<div class="spacer"></div>
-
-<div class="reveal">
-  <h3>La Problématique Technique</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-
-<div class="spacer"></div>
-
-<div class="reveal">
-  <div class="placeholder-box">
-    [ IMAGE : COURBE D'APPRENTISSAGE ML ]
-  </div>
-</div>
-
-<div class="spacer"></div>
-
-<div class="reveal">
-  <h3>L'Algorithme de Contrôle</h3>
-  <p>Voici comment j'ai implémenté la boucle PID :</p>
-  <pre><code>
-  float error = setpoint - input;
-  integral += error * dt;
-  float derivative = (error - prevError) / dt;
-  output = Kp * error + Ki * integral + Kd * derivative;
-  </code></pre>
-</div>
-
-<div class="spacer"></div>
-
-<div class="reveal">
-  <div class="placeholder-box">
-    [ VIDÉO : DÉMO FINALE ]
-  </div>
-</div>
-
-<div class="reveal">
-  <h3>Conclusion</h3>
-  <p>Le système est stable et répond aux exigences en temps réel.</p>
-</div>
-
-<div style="height: 400px;"></div> <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // On crée l'observateur
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        // Si l'élément entre dans l'écran
-        if (entry.isIntersecting) {
-          // On ajoute la classe "active" qui déclenche le CSS
-          entry.target.classList.add('active');
-          // (Optionnel) On arrête d'observer une fois apparu pour économiser des ressources
-          observer.unobserve(entry.target); 
-        }
-      });
-    }, {
-      threshold: 0.15 // L'animation se lance quand 15% de l'élément est visible
-    });
-
-    // On cible tous les éléments avec la classe "reveal"
-    const hiddenElements = document.querySelectorAll('.reveal');
-    hiddenElements.forEach((el) => observer.observe(el));
-  });
 </script>
