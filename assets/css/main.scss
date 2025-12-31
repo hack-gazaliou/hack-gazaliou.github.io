@@ -2,141 +2,116 @@
 ---
 
 /* ==========================================
-   1. DÉFINITION DE TA CHARTE GRAPHIQUE
-   (Doit être avant l'import du thème)
+   1. CHARTE GRAPHIQUE & CONFIG
 ============================================= */
 
-// --- COULEURS CYBER/TECH ---
-$background-color: #0a192f;        // Bleu nuit profond (Fond principal)
-$text-color: #e6f1ff;              // Blanc cassé (Texte courant)
-$muted-text-color: #8892b0;        // Gris bleuté (Texte secondaire/dates)
-$primary-color: #FFC107;           // JAUNE ÉLECTRIQUE (Liens, boutons, accents)
-$headings-color: #FFC107;          // Jaune pour les titres
-$link-color: #FFC107;              // Jaune pour les liens
-$link-color-hover: #ffe066;        // Jaune plus clair au survol
-$border-color: #233554;            // Couleur des bordures subtiles
-$code-background-color: #112240;   // Fond des blocs de code
+// --- COULEURS ---
+$background-color: #0a192f;
+$text-color: #e6f1ff;
+$muted-text-color: #8892b0;
+$primary-color: #FFC107;           // JAUNE ÉLECTRIQUE
+$headings-color: #FFC107;          // JAUNE POUR LES TITRES (Requirement 1)
+$link-color: #FFC107;
+$border-color: #233554;
+$code-background-color: #112240;
 
 // --- TYPOGRAPHIE ---
-$global-font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", Helvetica, Arial, sans-serif;
-$header-font-family: "Fira Code", monospace; // Police "Hacker" pour les titres
-$caption-font-family: "Fira Code", monospace;
+$global-font-family: "Inter", -apple-system, sans-serif; // Police "Dense" pour le corps (Requirement 2)
+$header-font-family: "Fira Code", monospace;
 
-// --- IMPORT DU THÈME OFFICIEL ---
 @import "minimal-mistakes";
 
-
 /* ==========================================
-   2. TES CUSTOMISATIONS AVANCÉES
-   (S'applique par dessus le thème)
+   2. CUSTOMISATIONS (Surcharges)
 ============================================= */
 
-/* --- GLOBAL & STRUCTURE --- */
+/* --- GLOBAL --- */
 body {
   background-color: $background-color;
   color: $text-color;
+  font-family: $global-font-family; // Applique "Inter" partout sauf titres
+  line-height: 1.6; // Un peu plus serré pour l'effet dense
 }
 
-/* La barre latérale (Ton profil) */
-.sidebar {
-  background-color: lighten($background-color, 5%) !important; // Un peu plus clair que le fond
-  border-right: 1px solid $border-color;
-}
-
-.sidebar__container {
-   background-color: transparent !important;
-}
-
-
-/* --- TYPOGRAPHIE CYBER --- */
-// Appliquer la police "Fira Code" aux titres h1 -> h6
-h1, h2, h3, h4, h5, h6 {
+/* --- LES TITRES (En jaune) --- */
+h1, h2, h3, h4, h5, h6, .site-title, .archive__item-title {
+  color: $primary-color !important;
   font-family: $header-font-family;
-  text-transform: uppercase; // Optionnel : met les titres en majuscules pour plus d'impact
-  letter-spacing: 0.05em;
 }
 
-// Le titre du site dans la barre latérale
-.site-title {
-    font-family: $header-font-family;
-    color: $primary-color !important;
-}
-
-
-/* --- LES CARTES PROJETS (Style inspiré de ton image) --- */
-.archive__item {
-  background-color: #112240; // Bleu plus clair pour faire ressortir la carte
-  border: 2px solid $border-color;
-  border-radius: 8px;
-  padding: 15px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-
-  // Intégration de ton animation de scroll (si tu utilises le JS)
-  &.reveal-element {
-    opacity: 0;
-    transform: translateY(50px) scale(0.98);
-  }
-  &.reveal-active {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* Effet au survol de la carte */
-.archive__item:hover {
-  transform: translateY(-5px) !important;
-  border-color: $primary-color; // Bordure jaune au survol
-  box-shadow: 0 10px 20px rgba(255, 193, 7, 0.15); // Légère lueur jaune
-}
-
-// Le titre dans la carte
-.archive__item-title a {
-    font-family: $header-font-family;
-    color: $text-color !important; // Titre blanc par défaut
-    text-decoration: none;
-}
-
-.archive__item:hover .archive__item-title a {
-    color: $primary-color !important; // Titre devient jaune au survol
-}
-
-// Le petit texte sous le titre
-.archive__item-excerpt {
-    color: $muted-text-color;
-    font-size: 0.9em;
-}
-
-/* Image dans la carte */
-.archive__item-teaser {
-    border-radius: 6px;
-    overflow: hidden;
-    border-bottom: 2px solid $border-color;
-}
-
-
-/* --- BOUTONS & NAVIGATION --- */
-// Les boutons (ex: pagination)
-.btn--primary {
-    background-color: transparent;
-    border: 2px solid $primary-color;
-    color: $primary-color;
-    font-family: $header-font-family;
-
-    &:hover {
-        background-color: $primary-color;
-        color: $background-color; // Texte devient foncé sur fond jaune
-    }
-}
-
-// Menu du haut
+/* --- NAVIGATION DU HAUT (Trait jaune) --- */
 .greedy-nav {
     background-color: $background-color;
     border-bottom: 1px solid $border-color;
 }
 .greedy-nav a {
     color: $text-color !important;
-    &:hover {
-        color: $primary-color !important;
-    }
+    position: relative; // Nécessaire pour le trait
+}
+// Le trait jaune au survol ou actif
+.greedy-nav a:hover, .greedy-nav .active a {
+    color: $primary-color !important;
+    box-shadow: 0 2px 0 $primary-color; // Le trait fin en dessous
+}
+
+/* --- BARRE LATÉRALE --- */
+.sidebar {
+  background-color: lighten($background-color, 3%);
+  border-right: 1px solid $border-color;
+}
+
+/* --- CARTES PROJETS --- */
+.archive__item {
+  background-color: #112240;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  padding: 15px;
+  transition: all 0.3s ease;
+  margin-bottom: 20px; /* Espace entre les cartes */
+}
+
+.archive__item:hover {
+  transform: translateY(-5px);
+  border-color: $primary-color;
+}
+
+.archive__item-teaser {
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+/* --- SYSTÈME DE FILTRES (Boutons) --- */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  padding: 8px 20px;
+  font-family: $header-font-family;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background: $primary-color;
+  color: $background-color; // Texte noir sur fond jaune
+  font-weight: bold;
+}
+
+/* Animation pour le filtrage */
+.project-card {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.project-card.hidden {
+  display: none; /* Cache les éléments filtrés */
 }
