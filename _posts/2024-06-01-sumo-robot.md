@@ -33,7 +33,7 @@ header:
 <div class="reveal" markdown="1">
 Back in the second semester of my first year in Mechatronics, we were thrown into the deep end with a classic challenge: **The Sumo Robot Competition**.
 
-The rules were standard: a 500g weight limit, strictly defined dimensions (110x110mm), and a circular arena (Dohyo). The goal? Push the other robot out.
+The rules were standard: a 500g weight limit, strictly defined dimensions (110x110mm), and a circular arena (Dohyo). The goal ? Push the other robot out.
 
 While most teams focused on raw speed or heavy armor, we decided to bet on something else: **Situational Awareness.**
 </div>
