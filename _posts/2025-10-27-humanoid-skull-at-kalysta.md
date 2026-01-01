@@ -16,22 +16,26 @@ header:
 ---
 
 <style>
-  /* 1. MISE EN PAGE PC LARGE */
+  /* On cible les écrans larges */
   @media (min-width: 1280px) {
+    
+    /* 1. On élargit le conteneur global */
+    /* On passe à une largeur max plus grande (ex: 1600px) au lieu de bloquer */
     .page__inner-wrap {
-      max-width: 95% !important; 
+      max-width: 1600px !important; 
+      padding-left: 2em;
+      padding-right: 2em;
     }
+
+    /* 2. On débride simplement le texte */
+    /* On NE TOUCHE PAS aux largeurs (%) ni aux floats. */
+    /* On dit juste au texte : "Ne t'arrête pas à 900px, prends toute la place dispo" */
     .page__content {
       max-width: none !important; 
-      width: 75% !important;
-      float: right !important;
-    }
-    .sidebar {
-      width: 20% !important;
-      float: left !important;
     }
   }
-
+</style>
+</style>
   /* 2. ANIMATION SCROLL REVEAL */
   .reveal {
     opacity: 0;
