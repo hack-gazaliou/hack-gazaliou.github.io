@@ -47,9 +47,9 @@ header:
 </style>
 
 <div class="reveal" markdown="1">
-Last summer, I had the opportunity to join **Kalysta Actuation**, a Deeptech startup specializing in high-performance electro-hydraulic actuators. This internship marked the end of my first year of specialization in Mechatronics.
-
-The mission? **Upgrade the head of an existing humanoid robot.**
+Last summer, I had the opportunity to join [**Kalysta Actuation**](https://satt-paris-saclay.fr/deeptech-succes/kalysta/), a Deeptech startup based in **Evry, France**. Born as a spin-off (SATT) from **Paris-Saclay University**, the company specializes in high-performance electro-hydraulic actuators. This internship marked the end of my first year of specialization in Mechatronics.
+  
+The mission ? **Upgrade the head of an existing humanoid robot.**
 
 This wasn't just a typical student assignment. **Working daily alongside the CTO and a team of PhD researchers**, I was immediately thrust into the realities of industrial R&D: drastic space constraints, mass optimization, and the necessity to justify every design choice through rigorous preliminary study. Being immersed in such a high-level technical environment so early in my studies was an incredibly rich learning experience.
 </div>
