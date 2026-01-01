@@ -152,3 +152,16 @@ This project was my first real taste of the "Mechatronic Trinity": mechanical co
     hiddenElements.forEach((el) => observer.observe(el));
   });
 </script>
+<div class="reveal" markdown="1" style="text-align: center; margin-top: 40px; margin-bottom: 20px;">
+**Want to dive deeper?**
+For more details on the project, you can consult the full technical documentation below.
+
+<div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 15px;">
+  <a href="/assets/docs/Etude.pdf" target="_blank" class="btn btn--primary">
+    <i class="fas fa-file-pdf"></i> Pre-Project Study
+  </a>
+  <a href="/assets/docs/conception.pdf" target="_blank" class="btn btn--info">
+    <i class="fas fa-file-pdf"></i> Design Report
+  </a>
+</div>
+</div>
