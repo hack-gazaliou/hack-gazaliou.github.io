@@ -15,31 +15,29 @@ header:
   overlay_filter: 0.5
 ---
 <style>
-  /* On applique ceci UNIQUEMENT sur les grands écrans (PC) */
+  /* Uniquement pour les écrans PC larges */
   @media (min-width: 1280px) {
     
-    /* 1. On élargit le conteneur global à 95% de l'écran */
+    /* 1. On élargit le conteneur principal à 95% de l'écran */
     .page__inner-wrap {
-      max-width: 95% !important;
-      padding-left: 20px;
-      padding-right: 20px;
+      max-width: 95% !important; 
     }
 
-    /* 2. On fige la SIDEBAR à une largeur fixe confortable (300px) */
-    /* Comme ça, elle ne deviendra jamais "maigre" */
-    .sidebar {
-      width: 300px !important;
-      float: left !important;
-      margin-right: 0 !important; /* On gère l'espace nous-mêmes */
-    }
-
-    /* 3. Le TEXTE prend TOUT le reste de la place */
-    /* Largeur = 100% - 300px (sidebar) - 50px (espace entre les deux) */
+    /* 2. C'EST LA LIGNE IMPORTANTE : */
+    /* On force la colonne de texte à prendre 75% de la page */
+    /* ET on retire la limite interne (max-width) qui compressait ton texte */
     .page__content {
-      width: calc(100% - 350px) !important; 
-      float: right !important;
+      width: 75% !important; 
+      float: right !important; /* On respecte le flux du thème (sidebar à gauche, texte à droite) */
+      max-width: 100% !important; /* On fait sauter le verrou ! */
       margin-right: 0 !important;
-      max-width: none !important; /* On fait sauter le verrou de largeur */
+    }
+
+    /* 3. La sidebar prend les 20-25% restants */
+    .sidebar {
+      width: 20% !important;
+      float: left !important;
+      margin-left: 0 !important;
     }
   }
 </style>
