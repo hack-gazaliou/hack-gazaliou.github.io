@@ -30,7 +30,7 @@ defaults:
 author:
   name: "Hack GAZALIOU" 
   avatar: "/assets/images/profile.jpg"
-  bio: "Mechatronics engineering student. Bridging the gap between **Control Theory** and **ML**."
+  bio: "Third-year mechatronics student interested in control systems, computer vision and machine learning."
   location: "Ile de France/Strasbourg, France"
   links:
     - label: "LinkedIn"
