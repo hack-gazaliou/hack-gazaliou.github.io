@@ -15,26 +15,28 @@ header:
   overlay_filter: 0.5
 ---
 <style>
-  /* Uniquement pour les écrans d'ordinateur (plus larges que 1024px) */
-  @media (min-width: 1024px) {
+  /* On cible uniquement les écrans larges (PC) */
+  @media (min-width: 1280px) {
     
-    /* 1. On débride la largeur maximale du conteneur global */
+    /* 1. On élargit le conteneur principal */
+    /* Par défaut, il est bloqué à ~1200px. On le passe à 90% de l'écran */
     .page__inner-wrap {
-      max-width: 100% !important; /* Passe de ~1000px à 90% de l'écran */
-      margin-left: auto;
-      margin-right: auto;
+      max-width: 90% !important; 
     }
 
-    /* 2. On ajuste la proportion Texte vs Sidebar (Optionnel) */
-    /* Par défaut c'est souvent : Sidebar 25% / Texte 75% environ */
-    /* Ici on force le texte à prendre toute la place disponible restante */
+    /* 2. On dit au texte de prendre toute la place disponible dans sa colonne */
+    /* Le thème bloque souvent le texte à une largeur de lecture "livre". On retire ça. */
     .page__content {
-      width: 78% !important; 
-      float: right;
+      width: 75% !important; /* Laisse 25% pour la sidebar */
+      max-width: none !important; /* RETIRE la limite de largeur du texte */
+      margin-right: 0 !important;
+      float: right !important; /* Force le texte à rester à droite */
     }
 
+    /* 3. On s'assure que la sidebar reste à sa place */
     .sidebar {
       width: 20% !important;
+      margin-left: 0 !important;
     }
   }
 </style>
