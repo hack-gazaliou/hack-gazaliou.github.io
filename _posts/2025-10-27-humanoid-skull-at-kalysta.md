@@ -133,6 +133,8 @@ Collaborating closely with the CTO and PhD students at this stage of my educatio
 
 ### Read the Full Report
 
+For more details, you can refer to the full report.
+
 <div class="reveal" style="text-align: center; margin-top: 20px;">
   <a href="/assets/docs/Rapport.pdf" class="btn btn--primary btn--large">
     <i class="fas fa-file-pdf"></i> Download Report (PDF - French)
