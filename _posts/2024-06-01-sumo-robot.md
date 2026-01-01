@@ -20,7 +20,7 @@ header:
     
     /* 1. On débride la largeur maximale du conteneur global */
     .page__inner-wrap {
-      max-width: 90% !important; /* Passe de ~1000px à 90% de l'écran */
+      max-width: 100% !important; /* Passe de ~1000px à 90% de l'écran */
       margin-left: auto;
       margin-right: auto;
     }
@@ -29,7 +29,7 @@ header:
     /* Par défaut c'est souvent : Sidebar 25% / Texte 75% environ */
     /* Ici on force le texte à prendre toute la place disponible restante */
     .page__content {
-      width: 100% !important; 
+      width: 78% !important; 
       float: right;
     }
 
