@@ -15,32 +15,34 @@ header:
   overlay_filter: 0.5
 ---
 <style>
-  /* On cible uniquement les écrans larges (PC) */
+  /* On applique ceci UNIQUEMENT sur les grands écrans (PC) */
   @media (min-width: 1280px) {
     
-    /* 1. On élargit le conteneur principal */
-    /* Par défaut, il est bloqué à ~1200px. On le passe à 90% de l'écran */
+    /* 1. On élargit le conteneur global à 95% de l'écran */
     .page__inner-wrap {
-      max-width: 90% !important; 
+      max-width: 95% !important;
+      padding-left: 20px;
+      padding-right: 20px;
     }
 
-    /* 2. On dit au texte de prendre toute la place disponible dans sa colonne */
-    /* Le thème bloque souvent le texte à une largeur de lecture "livre". On retire ça. */
-    .page__content {
-      width: 75% !important; /* Laisse 25% pour la sidebar */
-      max-width: none !important; /* RETIRE la limite de largeur du texte */
-      margin-right: 0 !important;
-      float: right !important; /* Force le texte à rester à droite */
-    }
-
-    /* 3. On s'assure que la sidebar reste à sa place */
+    /* 2. On fige la SIDEBAR à une largeur fixe confortable (300px) */
+    /* Comme ça, elle ne deviendra jamais "maigre" */
     .sidebar {
-      width: 20% !important;
-      margin-left: 0 !important;
+      width: 300px !important;
+      float: left !important;
+      margin-right: 0 !important; /* On gère l'espace nous-mêmes */
+    }
+
+    /* 3. Le TEXTE prend TOUT le reste de la place */
+    /* Largeur = 100% - 300px (sidebar) - 50px (espace entre les deux) */
+    .page__content {
+      width: calc(100% - 350px) !important; 
+      float: right !important;
+      margin-right: 0 !important;
+      max-width: none !important; /* On fait sauter le verrou de largeur */
     }
   }
 </style>
-
 <style>
   /* L'état initial : invisible et un peu plus bas */
   .reveal {
