@@ -13,11 +13,11 @@ If you want to learn more about my academic and professional background, you can
 
 <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px;">
   
-  <a href="/assets/docs/CV-en.pdf" target="_blank" class="btn btn--primary btn--large">
+  <a href="/assets/docs/CV-fr.pdf" target="_blank" class="btn btn--primary btn--large">
     <i class="fas fa-file-download"></i> French Version
   </a>
 
-  <a href="/assets/docs/CV-fr.pdf" target="_blank" class="btn btn--info btn--large">
+  <a href="/assets/docs/CV-en.pdf" target="_blank" class="btn btn--info btn--large">
     <i class="fas fa-file-download"></i> English Version
   </a>
 
