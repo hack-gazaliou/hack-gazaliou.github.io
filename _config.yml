@@ -39,6 +39,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/hack-gazaliou"
+    - label: "My Background & CV"
+      icon: "fas fa-address-card"
+      url: "/about/"
 
 # --- PLUGINS NÉCESSAIRES ---
 plugins:
