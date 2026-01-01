@@ -34,8 +34,6 @@ header:
       max-width: none !important; 
     }
   }
-</style>
-</style>
   /* 2. ANIMATION SCROLL REVEAL */
   .reveal {
     opacity: 0;
