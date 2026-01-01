@@ -66,7 +66,7 @@ I categorized existing solutions into three main families:
 </div>
 
 <figure class="align-center reveal">
-  <img src="/assets/images/comparison.png" alt="Comparison of mouth mechanisms" style="display: block; margin-left: auto; margin-right: auto; width: 80%;">
+  <img src="/assets/images/comparison.png" alt="Comparison of mouth mechanisms" style="display: block; margin-left: auto; margin-right: auto; width: 90%;">
   <figcaption style="text-align: center;">Comparative analysis of the different mechanism typologies studied.</figcaption>
 </figure>
 
