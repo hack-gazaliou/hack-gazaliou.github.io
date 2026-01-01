@@ -14,6 +14,30 @@ header:
   overlay_image: /assets/images/quart.jpg
   overlay_filter: 0.5
 ---
+<style>
+  /* Uniquement pour les écrans d'ordinateur (plus larges que 1024px) */
+  @media (min-width: 1024px) {
+    
+    /* 1. On débride la largeur maximale du conteneur global */
+    .page__inner-wrap {
+      max-width: 90% !important; /* Passe de ~1000px à 90% de l'écran */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* 2. On ajuste la proportion Texte vs Sidebar (Optionnel) */
+    /* Par défaut c'est souvent : Sidebar 25% / Texte 75% environ */
+    /* Ici on force le texte à prendre toute la place disponible restante */
+    .page__content {
+      width: 78% !important; 
+      float: right;
+    }
+
+    .sidebar {
+      width: 20% !important;
+    }
+  }
+</style>
 
 <style>
   /* L'état initial : invisible et un peu plus bas */
