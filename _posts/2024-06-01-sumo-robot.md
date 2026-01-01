@@ -29,7 +29,7 @@ header:
     /* Par défaut c'est souvent : Sidebar 25% / Texte 75% environ */
     /* Ici on force le texte à prendre toute la place disponible restante */
     .page__content {
-      width: 78% !important; 
+      width: 90% !important; 
       float: right;
     }
 
