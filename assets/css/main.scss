@@ -174,3 +174,33 @@ h1, h2, h3, h4, h5, h6, .site-title, .archive__item-title {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+/* 1. Style du Badge (Global) */
+.badge-progress {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #e67e22; /* Orange pour le contraste */
+  border: 1px solid #e67e22;
+  background-color: rgba(230, 126, 34, 0.1);
+  border-radius: 3px;
+  padding: 2px 6px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  vertical-align: middle;
+}
+
+/* 2. Cadrage BAS pour la bulle projet (Teaser) */
+/* On force l'image à regarder vers le bas (la main) */
+.archive__item-teaser img {
+    width: 100%;
+    height: 200px; /* On impose une hauteur pour forcer le crop */
+    object-fit: cover; /* On remplit le cadre */
+    object-position: bottom center !important; /* FOCUS BAS */
+}
+
+/* 3. Cadrage HAUT pour la bannière de l'article */
+/* On force l'image à regarder vers le haut (le poignet/structure) */
+.page__hero-image {
+    object-position: top center !important; /* FOCUS HAUT */
+}
