@@ -1,6 +1,7 @@
 ---
 title: "Robotic Hand & Computer Vision: Towards Machine Learning Control"
-excerpt: "Developing a 6-DOF anthropomorphic hand: from bio-inspired mechanical design to AI-driven control using MediaPipe and ESP32."
+# On injecte le badge directement dans l'excerpt
+excerpt: "<span class='badge-progress' style='font-size: 0.6rem; border-width: 1px; padding: 2px 5px; margin-bottom: 10px;'>Work In Progress</span><br/>Developing a 6-DOF anthropomorphic hand: from bio-inspired mechanical design to AI-driven control using MediaPipe and PTC Creo."
 categories:
   - personal
   - robotics
