@@ -11,8 +11,8 @@ tags:
   - OpenCV
   - Machine Learning
 header:
-  teaser: /assets/images/hand-cad.jpg
-  overlay_image: /assets/images/hand-cad.jpg
+  teaser: /assets/images/hand.png
+  overlay_image: /assets/images/hand.png
   overlay_filter: 0.5
 ---
 
