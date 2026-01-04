@@ -161,3 +161,16 @@ h1, h2, h3, h4, h5, h6, .site-title, .archive__item-title {
 .sidebar .author__content {
   text-align: center;
 }
+.badge-progress {
+  display: inline-block;
+  font-size: 0.7em;
+  font-weight: bold;
+  color: #e67e22; /* Orange vif */
+  border: 1px solid #e67e22;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin-bottom: 5px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
