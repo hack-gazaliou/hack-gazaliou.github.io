@@ -43,6 +43,23 @@ header:
     text-transform: uppercase;
     letter-spacing: 1.2px;
   }
+  /* Cadrage dans la bulle projet (Teaser) */
+/* On force l'image à se focaliser sur le bas (bottom) */
+.archive__item-teaser img {
+  object-position: bottom !important;
+}
+
+/* Cadrage dans la bannière (Overlay) */
+/* On force l'image à se focaliser sur le haut (top) */
+.wrapper.inner {
+  /* Si ton thème utilise background-image pour l'overlay */
+  background-position: center top !important;
+}
+
+/* Si tu utilises une image d'en-tête standard (pas overlay) */
+.page__hero-image {
+  object-position: top !important;
+}
 </style>
 
 <div class="reveal" markdown="1">
