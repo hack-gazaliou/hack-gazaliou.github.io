@@ -8,12 +8,12 @@ tags:
   - rl
   - deep learning
   - control
-
   - research
 header:
   teaser: /assets/images/environnement.png
   overlay_image: /assets/images/environnement.png
 ---
+
 <style>
   /* 2. ANIMATION SCROLL REVEAL */
   .reveal {
@@ -37,7 +37,9 @@ This was a highly instructive experience, it opened my horizons to new control m
 Below, you will find the complete technical report detailing the methodology, the different approaches that I tried, and final test results. 
 
 For the best reading experience, you can scroll through the document directly on this page.
+</div>
 
+<div class="reveal">
 <iframe src="/assets/docs/Report_fruit_catcher.pdf" width="100%" height="800px" style="border: 1px solid #ccc; border-radius: 5px; margin-top: 20px;">
     This browser does not support embedded PDFs. Please download the PDF to view it: <a href="/assets/docs/Report_fruit_catcher.pdf">Download PDF</a>.
 </iframe>
@@ -47,3 +49,22 @@ For the best reading experience, you can scroll through the document directly on
     <i class="fas fa-download"></i> Download Full Report
   </a>
 </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target); 
+        }
+      });
+    }, {
+      threshold: 0.15 
+    });
+
+    const hiddenElements = document.querySelectorAll('.reveal');
+    hiddenElements.forEach((el) => observer.observe(el));
+  });
+</script>
