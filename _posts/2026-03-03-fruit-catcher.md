@@ -28,7 +28,6 @@ header:
 </style>
 
 <div class="reveal" markdown="1">
-<span class="badge-progress"><i class="fas fa-tools"></i> Work In Progress</span>
 
 The objective of this project was to train an agent to play a simple game (catching fruits while dodging bombs). This also provided an opportunity to conduct a brief comparative study of two basic RL algorithms: Vanilla Policy Gradient and Deep Q-Network.
 
