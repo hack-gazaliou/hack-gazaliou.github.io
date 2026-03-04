@@ -28,7 +28,7 @@ header:
 </style>
 
 <div class="reveal" markdown="1">
-As an engineering student, I have always been fascinated by aerospace and the mathematical modeling of complex physical phenomena. This project, completed in pairs with my classmate Jules Cardot, was the perfect opportunity to dive deep into orbital mechanics and numerical simulations.
+As an engineering student, I have always been fascinated by aerospace and the mathematical modeling of complex physical phenomena. This project, completed in pairs with my classmate [Jules Cardot](https://yales-bit.github.io/), was the perfect opportunity to dive deep into orbital mechanics and numerical simulations.
 
 Our goal was to approximate the trajectory of the Cassini-Huygens space probe during its Venus flyby. Because solving the equation of motion for an N-body system cannot be done analytically, we had to rely on numerical methods. We modeled the orbit using and comparing different numerical schemes—specifically Euler, Verlet, and Leapfrog—to analyze their stability, convergence speed, and energy conservation over time. We also extended our study to the fascinating Pythagorean three-body problem.
 
