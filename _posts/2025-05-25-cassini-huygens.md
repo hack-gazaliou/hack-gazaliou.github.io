@@ -25,6 +25,15 @@ header:
     opacity: 1;
     transform: translateY(0);
   }
+  /* On force l'image à se focaliser sur le haut (top) */
+.wrapper.inner {
+  /* Si ton thème utilise background-image pour l'overlay */
+  background-position: center bottom !important;
+}
+/* Si tu utilises une image d'en-tête standard (pas overlay) */
+.page__hero-image {
+  object-position: bottom !important;
+}
 </style>
 
 <div class="reveal" markdown="1">
