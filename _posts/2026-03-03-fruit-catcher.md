@@ -9,6 +9,7 @@ tags:
   - deep learning
   - control
   - research
+  - open-source
 header:
   teaser: /assets/images/environnement.png
   overlay_image: /assets/images/environnement.png
@@ -33,9 +34,11 @@ The objective of this project was to train an agent to play a simple game (catch
 
 This was a highly instructive experience, it opened my horizons to new control methods, which I plan to apply to physical systems in the future, rather than just virtual environments.
 
-Below, you will find the complete technical report detailing the methodology, the different approaches that I tried, and final test results. 
+Below, you will find the complete technical report detailing the methodology, the different approaches that I tried, and final test results. You can scroll through the document directly on this page on the laptop version of the site.
 
-For the best reading experience, you can scroll through the document directly on this page.
+This project is open-source, the source code is available on my [GitHub repository](https://github.com/hack-gazaliou/Pytorch-Reinforce-Catch).
+
+
 </div>
 
 <div class="reveal">
