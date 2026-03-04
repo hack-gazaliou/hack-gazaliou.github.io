@@ -9,8 +9,8 @@ tags:
   - simulation
   - numerical analysis
 header:
-  teaser: /assets/images/celestial-sim.jpg
-  overlay_image: /assets/images/celestial-sim.jpg
+  teaser: /assets/images/celestial-sim.png
+  overlay_image: /assets/images/celestial-sim.png
   overlay_filter: 0.5
 ---
 
