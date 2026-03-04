@@ -4,5 +4,24 @@ author_profile: true
 title: "Home"
 entries_layout: grid
 ---
+<style>
+    /* 1. Élargir les cartes (2 par ligne sur PC au lieu de 3 ou 4) */
+    @media (min-width: 768px) {
+        .grid__item {
+            width: 50% !important;
+            /* Force 2 colonnes */
+        }
+    }
 
+    /* 2. Rendre les images carrées */
+    .archive__item-teaser img {
+        aspect-ratio: 1 / 1 !important;
+        /* Force un ratio 1:1 (carré) */
+        object-fit: cover !important;
+        /* Remplit le carré en rognant ce qui dépasse sans déformer */
+        width: 100%;
+        border-radius: 5px;
+        /* Optionnel : adoucit un peu les angles */
+    }
+</style>
 Welcome to my portfolio.
