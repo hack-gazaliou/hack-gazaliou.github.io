@@ -34,6 +34,11 @@ header:
 .page__hero-image {
   object-position: bottom !important;
 }
+/* On force l'image à se focaliser sur le bas (bottom) */
+.archive__item-teaser img {
+  object-position: bottom !important;
+}
+
 </style>
 
 <div class="reveal" markdown="1">
